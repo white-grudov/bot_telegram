@@ -8,7 +8,7 @@ from functions import stuff, text_gen
 # Центрирует текст в изображении
 def text_centered(img, text, width, size, pos):
     ImageDraw.Draw(img)
-    font = ImageFont.truetype("./images/times-new-roman.ttf", size)
+    font = ImageFont.truetype("./images/font.ttf", size)
     draw = ImageDraw.Draw(img)
     w, h = draw.textsize(text, font)
     draw.text(((width - w) / 2, pos), text, fill='white', font=font)
