@@ -158,7 +158,7 @@ def manual_gen(message):
         #  Генерация текста
         elif message.text == 'D t':
             bot.send_message(message.chat.id,
-                             text_gen.get_neuro_text(message.chat.id, random.randint(1, 5) + 7))
+                             text_gen.get_neuro_text(message.chat.id, random.randint(0, 5) + 7))
             stuff.write_to_log('gen_text  ',
                                message.chat.title,
                                message.chat.id,
@@ -166,7 +166,7 @@ def manual_gen(message):
                                message.from_user.id)
         elif message.text == 'D p':
             prediction = 'Ваше предсказание✨:\n<i>' + \
-                         text_gen.get_neuro_text(-1488, random.randint(1, 3) + 11) + '</i>'
+                         text_gen.get_neuro_text(-1488, random.randint(0, 3) + 11) + '</i>'
             bot.send_message(message.chat.id, prediction, parse_mode='HTML')
             stuff.write_to_log('predict  ',
                                message.chat.title,
@@ -198,7 +198,7 @@ def save_and_gen(message):
             bot.send_photo(message.chat.id, open('./images/result.png', 'rb'))
         if rand == 2:
             bot.send_message(message.chat.id,
-                             text_gen.get_neuro_text(message.chat.id, random.randint(1, 5) + 7))
+                             text_gen.get_neuro_text(message.chat.id, random.randint(0, 5) + 7))
             stuff.write_to_log('gen_text ',
                                message.chat.title,
                                message.chat.id,
