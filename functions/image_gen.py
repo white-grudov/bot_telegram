@@ -22,8 +22,8 @@ def text_centered(img, text, width, size, pos):
 def image(chatname, chatid, username, userid, text, mode):
     try:
         if mode != 2 and mode != 4:
-            phrase_1 = text_gen.get_neuro_text(chatid, random.randint(1, 3))
-            phrase_2 = text_gen.get_neuro_text(chatid, random.randint(1, 6))
+            phrase_1 = text_gen.get_neuro_text(chatid, random.randint(0, 3))
+            phrase_2 = text_gen.get_neuro_text(chatid, random.randint(0, 6))
         else:
             phrase_1 = text
             phrase_2 = ''
