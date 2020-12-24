@@ -186,9 +186,6 @@ def save_and_gen(m):
         if rand == 2:
             bot.send_message(m.chat.id, text_gen.get_neuro_text(m.chat.id, random.randint(0, 5) + 8))
             stuff.write_to_log('gen_text ', m.chat.title, m.chat.id, m.from_user.username, m.from_user.id)
-        if m.from_user.id == 347398049:
-            if rand == 3:
-                bot.send_message(m.chat.id, 'привет дима', reply_to_message_id=m.id)
     except telebot.apihelper.ApiTelegramException:
         print('Bot is banned :(')
     except Exception as e:
@@ -229,10 +226,7 @@ def handle_docs_photo(m):
 # Сохранение стикеров
 @bot.message_handler(content_types=['sticker'])
 def handle_docs_sticker(m):
-    #  Исключение для Чата ФИ
-    if m.from_user.id == 419467462:
-        bot.send_message(m.chat.id, '<i>Beware of that curious performance!</i>', parse_mode='HTML')
-    elif m.sticker.is_animated:
+    if m.sticker.is_animated:
         pass
     else:
         try:
